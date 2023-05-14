@@ -10,8 +10,8 @@
     "st:add": "git subtree add --prefix=%npm_package_config_st-prefix% %npm_package_config_st-git% %npm_package_config_st-branch% --%npm_package_config_st-commit%",
     "st:pull": "git subtree pull --prefix=%npm_package_config_st-prefix% %npm_package_config_st-git% %npm_package_config_st-branch% --%npm_package_config_st-commit%",
     "st:splitPush": "npm run st:split && npm run st:push",
-    "st:split": "git subtree split --rejoin --prefix=%npm_package_config_st-prefix%  --branch subtreeSplitBranch",
-    "st:push": "git push %npm_package_config_st-git% subtreeSplitBranch:%npm_package_config_st-branch%"
+    "st:split": "git subtree split --rejoin --prefix=%npm_package_config_st-prefix%  --branch %npm_package_config_st-split-branch%",
+    "st:push": "git push %npm_package_config_st-git% %npm_package_config_st-split-branch%:%npm_package_config_st-branch%"
   },
   "dependencies": {
     "vue": "^3.2.47"
@@ -26,6 +26,7 @@
     "st-prefix": "src/subtree",
     "st-git": "https://github.com/yys-0505/subtree.git",
     "st-branch": "master",
-    "st-commit": "squash"
+    "st-commit": "squash",
+    "st-split-branch": "subtreeSplitBranch"
   }
 }
